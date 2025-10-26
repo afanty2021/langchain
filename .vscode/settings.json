@@ -9,7 +9,7 @@
     "**/.*",
   ],
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.typeCheckingMode": "off",
   "python.testing.cwd": "${workspaceFolder}",
   "python.linting.enabled": true,
   "python.linting.ruffEnabled": true,
