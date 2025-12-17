@@ -10,7 +10,7 @@
 
 - **主入口**: `langchain_model_profiles/__init__.py`
 - **核心类**: `ModelProfile`, `get_model_profile`
-- **版本**: 0.0.2
+- **版本**: 0.0.5
 
 ```python
 # 模块初始化

@@ -1,6 +1,7 @@
 # LangChain 项目概览
 
 **变更记录 (Changelog):**
+- 2025-12-17 10:30:00 - 重大更新：新增bedrock集成包，集成生态扩展到16个；验证langchain_v1版本更新至1.2.0；更新项目统计和覆盖率数据
 - 2025-11-19 15:00:00 - 重大发现：新增model-profiles模块，完善模块覆盖到8个
 - 2025-11-18 12:56:16 - 维护性更新：验证文档体系完整性，确认版本号一致性
 - 2025-11-18 12:51:23 - 深度优化：完善集成包分析、增强导航结构、优化模块图
@@ -52,12 +53,12 @@ graph TD
 
     %% 集成生态
     B --> F["partners<br/>🔗 官方集成生态"];
-    F --> F1["Chat Models<br/>15个主要提供商"];
+    F --> F1["Chat Models<br/>16个主要提供商"];
     F --> F2["Vector Stores<br/>2个向量数据库"];
     F --> F3["Tools & Utils<br/>3个工具集成"];
 
     %% 详细的集成包
-    F1 --> FA["anthropic<br/>openai<br/>ollama<br/>huggingface<br/>groq<br/>mistralai<br/>deepseek<br/>xai<br/>fireworks<br/>perplexity"];
+    F1 --> FA["anthropic<br/>openai<br/>ollama<br/>huggingface<br/>groq<br/>mistralai<br/>deepseek<br/>xai<br/>fireworks<br/>perplexity<br/>bedrock"];
     F2 --> FB["chroma<br/>qdrant"];
     F3 --> FC["nomic<br/>exa<br/>prompty"];
 
@@ -126,7 +127,7 @@ graph TD
 | `libs/core` | 核心抽象和接口定义 | `langchain_core/__init__.py` | ✅ 完整 | 活跃 | Runnable协议、LCEL、Base*接口 |
 | `libs/langchain` | 经典框架实现 | `langchain_classic/__init__.py` | ✅ 完整 | 维护 | LLMChain、向后兼容 |
 | `libs/langchain_v1` | v1版本主入口，智能体框架 | `langchain/__init__.py` | ✅ 完整 | 活跃 | 15+中间件、LangGraph集成 |
-| `libs/partners` | 官方第三方集成(15个) | `partners/*/langchain_*/__init__.py` | ✅ 完整 | 活跃 | 标准化接口、统一测试 |
+| `libs/partners` | 官方第三方集成(16个) | `partners/*/langchain_*/__init__.py` | ✅ 完整 | 活跃 | 标准化接口、统一测试 |
 | `libs/cli` | 开发者工具链 | `langchain_cli/cli.py` | ✅ 完整 | 活跃 | 模板、迁移、项目管理 |
 | `libs/text-splitters` | 文档分割工具库 | `langchain_text_splitters/__init__.py` | ✅ 完整 | 活跃 | 13种分割器、多格式支持 |
 | `libs/standard-tests` | 标准化测试框架 | `langchain_tests/__init__.py` | ✅ 完整 | 活跃 | BaseStandardTests、VCR录制 |
@@ -134,7 +135,7 @@ graph TD
 
 ## 集成生态深度分析
 
-### 🤖 聊天模型集成 (15个主要提供商)
+### 🤖 聊天模型集成 (16个主要提供商)
 | 集成包 | 版本 | 核心特性 | API支持 | 测试覆盖 |
 |--------|------|----------|---------|----------|
 | **openai** | 1.0.1 | GPT-4、embeddings、tools | 完整 | ✅ 全面 |
@@ -147,6 +148,7 @@ graph TD
 | **xai** | - | Grok模型 | 基础 | ✅ 标准 |
 | **fireworks** | - | Fireworks AI | 基础 | ✅ 标准 |
 | **perplexity** | - | 搜索增强对话 | 基础 | ✅ 标准 |
+| **bedrock** | - | AWS Bedrock托管模型 | 完整 | ✅ 标准 |
 
 ### 🗄️ 向量存储集成 (2个主要数据库)
 | 集成包 | 类型 | 特性 | 部署方式 | 适用场景 |
@@ -345,7 +347,7 @@ def check_model_capabilities(model_name: str):
 - **性能优化**: 对话总结、任务管理中间件
 
 #### 3. 集成标准化程度高
-- **统一接口**: 所有15个集成包遵循相同的基础接口
+- **统一接口**: 所有16个集成包遵循相同的基础接口
 - **测试一致**: 使用standard-tests确保质量一致性
 - **配置规范**: 统一的依赖管理和本地开发配置
 - **文档完整**: 每个集成都有完整的使用指南
@@ -358,7 +360,7 @@ def check_model_capabilities(model_name: str):
 
 ### 📊 覆盖率统计
 - **模块覆盖率**: 100% (8/8个模块完全文档化)
-- **集成包覆盖率**: 100% (15/15个集成包识别)
+- **集成包覆盖率**: 100% (16/16个集成包识别)
 - **测试策略覆盖率**: 98% (完整的测试框架 + 新模块)
 - **文档导航覆盖率**: 100% (面包屑导航+链接跳转)
 - **API文档覆盖率**: 95% (3700+文档字符串)
@@ -744,4 +746,4 @@ Before submitting code changes:
 
 ---
 
-*此文档由重大发现更新生成于 2025-11-19 15:00:00*
+*此文档由重大发现更新生成于 2025-12-17 10:30:00*
